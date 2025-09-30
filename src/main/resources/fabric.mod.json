@@ -4,8 +4,8 @@
   "version": "${version}",
   "name": "AnimalInfo",
   "description": "Adds a simple /animalinfo command to view stats from horses, donkeys, mules and llamas.",
-  "authors": [],
-  "contact": {},
+  "authors": ["github.com/Kiddooo"],
+  "contact": {"github": "https://github.com/Kiddooo"},
   "license": "All-Rights-Reserved",
   "icon": "assets/animalinfo/icon.webp",
   "environment": "client",
@@ -14,9 +14,6 @@
       "dev.kiddo.animalinfo.AnimalInfo"
     ]
   },
-  "mixins": [
-    "animalinfo.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",

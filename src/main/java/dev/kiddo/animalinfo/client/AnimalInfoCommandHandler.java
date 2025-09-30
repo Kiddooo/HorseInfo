@@ -11,6 +11,8 @@ import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.mob.SkeletonHorseEntity;
+import net.minecraft.entity.mob.ZombieHorseEntity;
 import net.minecraft.entity.passive.*;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
@@ -105,6 +107,26 @@ public class AnimalInfoCommandHandler {
 
                     MutableText message = formatText(null, null, null, null, null, null, hiddenGeneValue, mainGeneValue);
                     sendInfoMessage(source, "Panda", message);
+                    return 1;
+                }
+                case SkeletonHorseEntity skeletonHorse -> {
+                    MutableText movementSpeedValue = getMovementSpeed(skeletonHorse);
+                    MutableText jumpHeightValue = getJumpHeight(skeletonHorse);
+                    MutableText healthValue = getHealthValue(skeletonHorse);
+
+                    MutableText message = formatText(healthValue, jumpHeightValue, movementSpeedValue, null, null, null, null, null);
+
+                    sendInfoMessage(source, "Skeleton Horse", message);
+                    return 1;
+                }
+                case ZombieHorseEntity zombieHorse -> {
+                    MutableText movementSpeedValue = getMovementSpeed(zombieHorse);
+                    MutableText jumpHeightValue = getJumpHeight(zombieHorse);
+                    MutableText healthValue = getHealthValue(zombieHorse);
+
+                    MutableText message = formatText(healthValue, jumpHeightValue, movementSpeedValue, null, null, null, null, null);
+
+                    sendInfoMessage(source, "Zombie Horse", message);
                     return 1;
                 }
                 case null, default -> {

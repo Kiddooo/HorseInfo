@@ -10,6 +10,6 @@ public class AnimalInfo implements ModInitializer {
   @Override
   public void onInitialize() {
     ClientCommandRegistrationCallback.EVENT.register(
-        ((dispatcher, commandRegistryAccess) -> AnimalInfoCommandHandler.register(dispatcher)));
+        ((dispatcher, buildContext) -> AnimalInfoCommandHandler.register(dispatcher)));
   }
 }
